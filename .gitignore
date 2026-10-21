@@ -1,0 +1,20 @@
+# Runtime data belongs on each user's computer, never in a release.
+data/
+install.json
+*.log
+*.log.previous
+*.lnk
+*.bak
+*.previous
+*.xml
+backup-manifest.jsonl
+certificate-backups/
+previous-install/
+deployment.json
+verification.json
+test-results*.json
+dist/
+.test-work/
+.DS_Store
+Thumbs.db
+Desktop.ini

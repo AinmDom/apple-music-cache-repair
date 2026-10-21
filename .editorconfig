@@ -1,0 +1,13 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+charset = utf-8
+
+[*.{ps1,psm1}]
+charset = utf-8-bom
+
+[*.{yml,json}]
+indent_size = 2

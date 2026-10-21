@@ -1,0 +1,7 @@
+{
+  "name": "apple-music-cache-repair",
+  "version": "0.1.0-beta.1",
+  "license": "MIT",
+  "upstream": "https://github.com/mikepink/music-on-windows11-unknown-error-fix",
+  "runtime": "Windows PowerShell 5.1"
+}
