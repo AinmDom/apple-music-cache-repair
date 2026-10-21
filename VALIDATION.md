@@ -1,4 +1,4 @@
-# Local validation for 0.1.0-beta.1
+# Validation for 0.1.0-beta.1
 
 Validated on 2026-10-21 on one Windows 11 computer.
 
@@ -52,7 +52,23 @@ that is not proof of the public version on other machines.
 The upstream MIT notice and the workflow's pinned actions/checkout v7.0.1 commit
 were checked against their upstream GitHub repositories during this review.
 
-The GitHub Actions workflow is included but has not run remotely. Before a stable
-release, validate actual repair and task triggers on another Windows installation
-and test the PowerShell fallback with VBS disabled by system policy. Explicit
-PowerShell selection on this computer does not certify that system-policy case.
+## GitHub Actions
+
+On 2026-10-22 (Asia/Hong_Kong), [run 39634633029](https://github.com/AinmDom/apple-music-cache-repair/actions/runs/39634633029)
+passed for commit `38c169cd791af4c3c179f4857b320c0ffce76946`:
+
+| Hosted environment | Regression tests | Release packaging |
+|---|---|---|
+| Windows Server 2025, Windows PowerShell 5.1.26100.33438 | 52 passed, 0 failed | Passed |
+| Windows Server 2025, PowerShell 7.6.7 | 52 passed, 0 failed | Passed |
+
+The initial workflow run failed before creating any jobs because GitHub rejected
+`matrix.shell` in the step shell fields. The successful run uses two explicit jobs
+with literal `powershell` and `pwsh` shells. These hosted checks use generated
+fixtures and mocked adapters; they do not exercise a real Apple Music client.
+The workflow builds packages for validation and does not publish release assets.
+
+Before a stable release, validate actual repair and task triggers on another
+Windows installation and test the PowerShell fallback with VBS disabled by system
+policy. Explicit PowerShell selection on this computer does not certify that
+system-policy case.

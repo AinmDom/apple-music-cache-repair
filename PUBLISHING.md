@@ -2,7 +2,9 @@
 
 本目录是可独立上传的开源源码，不包含用户运行数据。不要上传原先日常使用的修复目录。
 
-1. 在你自己的 GitHub 账户创建仓库，例如 `apple-music-cache-repair`。上传本目录内容，保留 `.github`、`.gitignore`、LICENSE 和 NOTICE.md；不要再额外生成一个会覆盖现有声明的许可证。
+公开仓库为 [AinmDom/apple-music-cache-repair](https://github.com/AinmDom/apple-music-cache-repair)。源码已推送，双版本 PowerShell 云端测试和打包已通过，具体证据见 [VALIDATION.md](VALIDATION.md)。尚未创建标签或 GitHub Release。
+
+1. 后续仅推送本目录内容到上述仓库根目录，保留 `.github`、`.gitignore`、LICENSE 和 NOTICE.md；不要上传外层交接记录或 `releases`，也不要额外生成一个会覆盖现有声明的许可证。
 2. README 已注明基于上游工作。保留 Mike Pinkowish 的 MIT 版权声明；你可以为自己新增的贡献添加真实署名，不要将上游代码改称全部原创。
 3. 在仓库设置中启用 private vulnerability reporting，检查公开仓库的秘密扫描和推送保护设置。仓库不需要任何令牌、Apple 账户或运行日志。
 4. 确认 GitHub Actions 的两种 PowerShell 测试及打包步骤通过。附带工作流配置不代表远端 CI 已经执行。
@@ -10,4 +12,4 @@
 6. 在源码目录运行 `tools\Build-Release.ps1`，生成白名单 ZIP 和 SHA-256。不要直接压缩安装目录。
 7. 首次发布建议使用标签 `v0.1.0-beta.1`，附上生成的 ZIP、`.sha256` 和 CHANGELOG 中对应说明。声明当前验证范围，不保证修复所有“未知错误”。
 
-项目代码、文档和发布包在本地准备完毕，不会自动创建仓库、推送提交或发布 Release。
+本地打包脚本不会自动推送或发布 Release。创建标签、上传发布附件和发布 Release 须另获用户授权。

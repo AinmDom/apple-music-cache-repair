@@ -12,5 +12,6 @@
 - Isolated regression suite, Windows CI configuration, and allowlisted release packaging.
 - Pre-publication review: bounded certificate reads, post-manifest deletion checks,
   rejection of drive-relative paths, and rollback preserving existing empty files.
-- 52 isolated regression scenarios passed under Windows PowerShell 5.1 and PowerShell 7;
-  remote CI and actual task/client checks on another Windows installation remain pending.
+- 52 isolated regression scenarios passed under Windows PowerShell 5.1 and PowerShell 7,
+  both locally and in GitHub Actions; actual task/client checks on another Windows
+  installation and VBS-disabled behavior remain pending.
