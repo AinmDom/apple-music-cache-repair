@@ -9,21 +9,32 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  windows-powershell:
     runs-on: windows-latest
     timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        shell: [powershell, pwsh]
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - name: Run isolated regression suite
-        shell: ${{ matrix.shell }}
+        shell: powershell
         run: ./tests/Run-Tests.ps1
       - name: Validate release packaging
-        shell: ${{ matrix.shell }}
+        shell: powershell
+        run: ./tools/Build-Release.ps1
+
+  powershell-7:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Run isolated regression suite
+        shell: pwsh
+        run: ./tests/Run-Tests.ps1
+      - name: Validate release packaging
+        shell: pwsh
         run: ./tools/Build-Release.ps1
