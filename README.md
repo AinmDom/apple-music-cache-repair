@@ -1,3 +1,5 @@
+[简体中文](README.md) | [English](README.en.md)
+
 # Apple Music Cache Repair
 
 Windows 版 Apple Music 的 `setupCert` 证书缓存修复工具。只备份并清理对应缓存文件，不重置应用，不清理下载音乐、资料库或登录数据。
